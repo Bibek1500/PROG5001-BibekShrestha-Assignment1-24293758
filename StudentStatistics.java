@@ -14,16 +14,49 @@ public class StudentStatistics
     String assessmentName = input.nextLine();
     
      //f2 and f3
-    double [] marks = new double[3];
+    int [] marks = new int[3];
+    
     for (int i = 0; i<marks.length;i++){
-        double mark;
+        int mark;
         do{
             System.out.println("enter the mark: ");
-            mark = input.nextDouble();
+            mark = input.nextInt();
             if (mark<0 || mark>30){
-                System.out.print("Error: The mark should be between 0 and 30!");
+                System.out.println("Error: The mark should be between 0 and 30!");
             }
         }while(mark <0 || mark>30);
     marks[i] = mark;
     }
-}} 
+    
+    //f4
+    System.out.println("Assessment name: "+ assessmentName);
+    for (int i=0; i<marks.length;i++){
+        System.out.println(marks[i]);
+    }
+    
+    //f5
+    double hMark = marks[0];
+    double lMark = marks[0];
+    int totalStudents = 30;
+    
+    for(int i = 0; i<3; i++) {
+        if(marks[i] > hMark) {
+            hMark = marks[i];
+        }
+        if(marks[i] < lMark) {
+            lMark = marks[i];
+        }       
+    }
+    System.out.println("The highest marks: " + hMark);
+    System.out.println("The Lowest marks: " + lMark);
+    
+    
+    
+    
+    
+    
+}
+   
+    
+    
+} 
