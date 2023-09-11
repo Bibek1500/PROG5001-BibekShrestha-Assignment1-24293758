@@ -14,7 +14,8 @@ public class StudentStatistics
     String assessmentName = input.nextLine();
     
      //f2 and f3
-    int [] marks = new int[3];
+    int [] marks = new int[30];
+    int totalStudents = 30;
     
     for (int i = 0; i<marks.length;i++){
         int mark;
@@ -37,9 +38,9 @@ public class StudentStatistics
     //f5
     double hMark = marks[0];
     double lMark = marks[0];
-    int totalStudents = 30;
+   
     
-    for(int i = 0; i<3; i++) {
+    for(int i = 0; i<30; i++) {
         if(marks[i] > hMark) {
             hMark = marks[i];
         }
@@ -49,6 +50,20 @@ public class StudentStatistics
     }
     System.out.println("The highest marks: " + hMark);
     System.out.println("The Lowest marks: " + lMark);
+    
+    //f6
+    double total = 0;
+    double mean = 0;
+    double diffSquare = 0;
+    double var = 0;
+    double sd = 0 ;
+    
+    for (int i = 0; i<totalStudents; i++) {
+        total = total + marks[i];
+    }
+    
+    mean = total / totalStudents;
+    System.out.print("mean:"+ mean);
     
     
     
