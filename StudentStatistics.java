@@ -20,7 +20,7 @@ public class StudentStatistics
     for (int i = 0; i<marks.length;i++){
         int mark;
         do{
-            System.out.println("enter the mark: ");
+            System.out.println("enter the mark "+ (i+1) + " :");
             mark = input.nextInt();
             if (mark<0 || mark>30){
                 System.out.println("Error: The mark should be between 0 and 30!");
@@ -63,13 +63,17 @@ public class StudentStatistics
     }
     
     mean = total / totalStudents;
-    System.out.print("mean:"+ mean);
+    System.out.println("mean:"+ mean);
     
+    for (int i =0; i< totalStudents; i++) {
+        double diff = marks[i] - mean;
+        diffSquare += diff * diff;
+    }
     
+    var = diffSquare / totalStudents;
+    sd = Math.sqrt(var);
     
-    
-    
-    
+    System.out.println("The Standard Deviation: "+ sd);  
 }
    
     
